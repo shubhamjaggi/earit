@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Ear It!</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+<script type="text/javascript" th:src="@{/js/noteChecker.js}"></script>
+<script type="text/javascript" th:src="@{/js/chordChecker.js}"></script>
+<script type="text/javascript" th:src="@{/js/scaleChecker.js}"></script>
+<script type="text/javascript" th:src="@{/js/intervalChecker.js}"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+	rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link th:href="@{/styles/main.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="title">Ear It!</div>
+	<nav>
+		<button type="button" class="note">Notes</button>
+		<button type="button" class="chord">Chords</button>
+		<button type="button" class="scale">Scales</button>
+		<button type="button" class="interval">Intervals</button>
+	</nav>
+
+	<div class="note hiddenByDefault logicalPartition">
+		<button type="button" class="play">Play</button>
+		<input type="text" id="answerNote" class="hiddenByDefault"
+			placeholder="Guess the note!" />
+		<button type="button" class="playAgain hiddenByDefault iconButton"
+			title="Hear it again">
+			<span class="material-icons">autorenew</span>
+		</button>
+		<br>
+		<button type="button" class="check  hiddenByDefault">Check</button>
+		<span class="material-icons hiddenByDefault iconForCorrectAnswer">check</span>
+		<span class="material-icons hiddenByDefault iconForWrongAnswer">close</span>
+		<div class="correctAnswer"></div>
+	</div>
+
+	<div class="chord hiddenByDefault logicalPartition">
+		<button type="button" class="play">Play</button>
+		<input type="text" id="answerChord" class="hiddenByDefault"
+			placeholder="Guess the chord!" />
+		<button type="button" class="playAgain  hiddenByDefault iconButton"
+			title="Hear it again">
+			<span class="material-icons">autorenew</span>
+		</button>
+		<button type="button"
+			class="arpeggiate asc hiddenByDefault iconButton"
+			title="Arpeggiate it upwards">
+			<span class="material-icons">arrow_upward</span>
+		</button>
+		<button type="button"
+			class="arpeggiate desc  hiddenByDefault iconButton"
+			title="Arpeggiate it downwards">
+			<span class="material-icons">arrow_downward</span>
+		</button>
+		<br>
+		<button type="button" class="check  hiddenByDefault">Check</button>
+		<span class="material-icons hiddenByDefault iconForCorrectAnswer">check</span>
+		<span class="material-icons hiddenByDefault iconForWrongAnswer">close</span>
+		<div class="correctAnswer"></div>
+	</div>
+
+	<div class="scale hiddenByDefault logicalPartition">
+		<button type="button" class="play">Play</button>
+		<input type="text" id="answerScale" class="hiddenByDefault"
+			placeholder="Guess the scale!" />
+		<button type="button" class="playAgain hiddenByDefault iconButton"
+			title="Hear it again">
+			<span class="material-icons">autorenew</span>
+		</button>
+		<br>
+		<button type="button" class="check hiddenByDefault">Check</button>
+		<span class="material-icons hiddenByDefault iconForCorrectAnswer">check</span>
+		<span class="material-icons hiddenByDefault iconForWrongAnswer">close</span>
+		<div class="correctAnswer"></div>
+	</div>
+
+	<div class="interval hiddenByDefault logicalPartition">
+		<button type="button" class="play">Play</button>
+		<input type="text" id="answerInterval" class="hiddenByDefault"
+			placeholder="Guess the interval!" />
+		<button type="button" class="playAgain hiddenByDefault iconButton"
+			title="Hear it again">
+			<span class="material-icons">autorenew</span>
+		</button>
+		<br>
+		<button type="button" class="check hiddenByDefault">Check</button>
+		<span class="material-icons hiddenByDefault iconForCorrectAnswer">check</span>
+		<span class="material-icons hiddenByDefault iconForWrongAnswer">close</span>
+		<div class="correctAnswer"></div>
+	</div>
+</body>
+</html>
