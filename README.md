@@ -29,8 +29,10 @@ Enharmonic equivalents are accepted — `C#` and `Db` are both correct for the s
 
 ## Tech stack
 
-- **Java 18 / Spring Boot 2.6.7** — REST API and Thymeleaf-rendered UI
+- **Java 21 / Spring Boot 3.3** — REST API and Thymeleaf-rendered UI
 - **javax.sound.midi** — built-in Java MIDI synthesizer, no external audio dependencies
+- **springdoc-openapi** — auto-generated interactive API docs (Swagger UI)
+- **Spring Actuator** — health and info endpoints
 - **jQuery + jQuery UI** — autocomplete, UI interactions
 - **Maven** — build and dependency management
 
@@ -43,6 +45,14 @@ mvn spring-boot:run
 ```
 
 Then open: [http://localhost:8080/earit/ui/index](http://localhost:8080/earit/ui/index)
+
+| Endpoint | URL |
+|---|---|
+| App UI | `http://localhost:8080/earit/ui/index` |
+| Swagger UI | `http://localhost:8080/swagger-ui/index.html` |
+| OpenAPI JSON | `http://localhost:8080/v3/api-docs` |
+| Health check | `http://localhost:8080/actuator/health` |
+| App info | `http://localhost:8080/actuator/info` |
 
 > Audio plays through the **server's** sound hardware — run locally, not on a remote server.
 
